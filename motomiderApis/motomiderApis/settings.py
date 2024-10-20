@@ -77,8 +77,15 @@ WSGI_APPLICATION = 'motomiderApis.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'testDatabase',  # Your database name
+        'USER': 'testDatabase_owner',  # Database user
+        'PASSWORD': 'VxNum05njzpi',  # Your password from the config
+        'HOST': 'ep-billowing-term-a50gjcnl.us-east-2.aws.neon.tech',  # Host address
+        'PORT': '5432',  # PostgreSQL default port (make sure to check if it's different)
+        'OPTIONS': {
+            'sslmode': 'require',  # SSL mode required as per the connection string
+        },
     }
 }
 
